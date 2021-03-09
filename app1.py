@@ -18,5 +18,9 @@ def tempdemo1():
 def tempdemo2():
     return render_template('demo2.html',i = 123,s = 'abc',s_list=['abc','abb','aaa'],d={"name":'aaa',"age":43})
 
+@app.route('/demo3')
+def tempdemo3():
+    return render_template('demo3.html',name1='这是传入值',name2=False)
+
 if __name__ == '__main__':
     app.run(host="127.0.0.1",port=80,debug=True)

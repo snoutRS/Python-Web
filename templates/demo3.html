@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>{{ name|default('这是默认值') }}</p>
+    <p>{{ name1|default('这是默认值')}}</p>
+    <p>{{ name2|default('这是假值',boolean=False) }}</p>
+    <p>{{ name3|default('这是假值',boolean=False) }}</p>
+    <p></p>
+</body>
+</html>
