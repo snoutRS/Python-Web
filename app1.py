@@ -20,7 +20,11 @@ def tempdemo2():
 
 @app.route('/demo3')
 def tempdemo3():
-    return render_template('demo3.html',name1='这是传入值',name2=False)
+    return render_template('demo3.html',name1='这是传入值',name2=False,name4="ABCD")
+
+# @app.route('/demo4')
+# def tempdemo4():
+#     return render_template("")
 
 if __name__ == '__main__':
     app.run(host="127.0.0.1",port=80,debug=True)
