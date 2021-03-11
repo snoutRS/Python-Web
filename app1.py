@@ -26,5 +26,21 @@ def tempdemo3():
 # def tempdemo4():
 #     return render_template("")
 
+
+# TODO 下面是宏相关
+# 宏的作用就是在模板中重复利用代码，避免代码冗余（主要是传递默认值）。
+context={
+    'username': '老萝卜',
+    'age': 18
+}
+
+@app.route("/demoHong1")
+def demo_marco1():
+    return render_template('demo_marco1.html', **context)
+
+@app.route("/demoHong2")
+def demo_marco2():
+    return render_template('demo_marco2.html', **context)
+
 if __name__ == '__main__':
     app.run(host="127.0.0.1",port=80,debug=True)
