@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id = "main" style="width:600px;height:400px;"></div>
+
+<script src="static/js/echarts.min.js"></script>
+
+<script>
+    var myChart = echarts.init(document.getElementById('main'));
+    var option={
+        xAxis:{
+            data:['m1','t2','w3','t4','f5','s6','s7']
+        },
+        yAxis:{
+            type:'value'
+        },
+        series:[{
+            data:['11','22','33','44','55','66','77'],
+                type:'bar'
+                }]
+    }
+
+    myChart.setOption(option)
+</script>
+</body>
+</html>

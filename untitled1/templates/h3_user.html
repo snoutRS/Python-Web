@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% import 'h3.html'as macro %}
+{% for i in range(10) %}
+{{ macro.f("hello world")}}
+{%endfor%}
+</body>
+</html>

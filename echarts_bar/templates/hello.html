@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="static/js/echarts.min.js"></script>
+</head>
+<body>
+    <div id="main" style="width:1920px;height:1080px;"></div>
+    <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('main'));
+        var option = {
+            baseOption:{
+                timeline:{
+                    data:['2017','2018','2019'],
+                    left:"center"
+                },
+                title:{
+                    text:'宁职院录取分数线',
+                    left:"center"
+                },
+<!--                legend:{-->
+<!--                data:['学院'],-->
+<!--                left:"0%"-->
+<!--                },-->
+                xAxis:{
+                    type:'category',
+                    data:{{d1['学院'] | safe}}
+                },
+                yAxis:[{type:'value'}],
+                series:[{
+                    type:'bar'
+                }],
+                toolbox:{
+                show:true,
+                feature:{
+                    saveAsImage:{show:true},
+                    dataView:{show:true, readOnly:false},
+                    restore:{show:true},
+                    magicType:{show:true,type:['line','bar']}
+                }
+            },
+
+            },
+            options: [
+                {
+                title:{
+                subtext:"2017录取分数线"
+                },
+                 legend:{
+                data:['学院'],
+                left:"0%"
+                },
+                series:[
+
+                    {name:'学院',data:[300,400,450,500,300,1000]}
+                ],
+                },
+                {
+                title:{
+                subtext:"2018录取分数线"
+                },
+                 legend:{
+                data:['学院'],
+                left:"0%"
+                },
+                series:[
+
+                    {name:'学院',data:[500,500,490,500,400,1000]}
+                ],
+                },
+                {
+                title:{
+                subtext:"2019录取分数线"
+                },
+                 legend:{
+                data:['学院'],
+                left:"0%"
+                },
+                series:[
+
+                    {name:'学院',data:[900,500,450,500,610,1000]}
+                ],
+                }
+            ]
+        }
+
+
+<!--        var option = {-->
+<!--            title:{-->
+<!--                text:"产品销量与价格",-->
+<!--                subtext:"汇总表",-->
+<!--                left:"center"-->
+<!--            },-->
+<!--            xAxis:{-->
+<!--                data:{{d1['品种'] | safe}}-->
+<!--            },-->
+<!--            tooltip:{-->
+<!--                trigger:"axis",-->
+<!--                axisPointer:{-->
+<!--                    type:"cross" //line, shadow, cross, none-->
+<!--                }-->
+<!--            },-->
+<!--            legend:{-->
+<!--                data:["销量","进货量"],-->
+<!--                left:"0%"-->
+<!--            },-->
+<!--            yAxis:{},-->
+<!--            toolbox:{-->
+<!--                show:true,-->
+<!--                feature:{-->
+<!--                    saveAsImage:{show:true},-->
+<!--                    dataView:{show:true, readOnly:false},-->
+<!--                    restore:{show:true},-->
+<!--                    magicType:{show:true,type:['line','bar']}-->
+<!--                }-->
+<!--            },-->
+<!--            series:[-->
+<!--                {-->
+<!--                    name:"销量",-->
+<!--                    type:"bar",-->
+<!--                    data:{{d1['销量'] | safe}}-->
+<!--                },-->
+<!--                {-->
+<!--                    name:"进货量",-->
+<!--                    type:"bar",-->
+<!--                    data:{{d1['进货量'] | safe}}-->
+<!--                }-->
+<!--            ]-->
+<!--        }-->
+        myChart.setOption(option);
+    </script>
+</body>
+</html>
